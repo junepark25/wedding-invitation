@@ -20,31 +20,7 @@ document.getElementById('rsvpForm').onsubmit=e=>{
   document.getElementById('formNote').textContent='현재는 디자인 템플릿 단계라 아직 전송되지 않습니다.';
 };
 
-// V10 Countdown: Korea wedding, 2026-10-10 11:30 KST
-(function(){
-  const target = new Date('2026-10-10T11:30:00+09:00').getTime();
-  const els = {
-    d: document.getElementById('cd-days'),
-    h: document.getElementById('cd-hours'),
-    m: document.getElementById('cd-minutes'),
-    s: document.getElementById('cd-seconds')
-  };
-  if(!els.d || !els.h || !els.m || !els.s) return;
-  const pad=n=>String(n).padStart(2,'0');
-  function tick(){
-    let diff=target-Date.now();
-    if(diff<=0){els.d.textContent='00';els.h.textContent='00';els.m.textContent='00';els.s.textContent='00';return;}
-    const days=Math.floor(diff/86400000); diff%=86400000;
-    const hours=Math.floor(diff/3600000); diff%=3600000;
-    const minutes=Math.floor(diff/60000); diff%=60000;
-    const seconds=Math.floor(diff/1000);
-    els.d.textContent=String(days);
-    els.h.textContent=pad(hours);
-    els.m.textContent=pad(minutes);
-    els.s.textContent=pad(seconds);
-  }
-  tick(); setInterval(tick,1000);
-})();
+
 
 // V10 Account copy
 (function(){
@@ -68,4 +44,146 @@ document.getElementById('rsvpForm').onsubmit=e=>{
       if(toast) toast.textContent=`${holder} ${bank} 계좌번호가 복사되었습니다.`;
     });
   });
+})();
+
+
+// =========================================================
+// V10.4 Flip countdown — Korea wedding 2026-10-10 11:30 KST
+// =========================================================
+(function(){
+  const target = new Date('2026-10-10T11:30:00+09:00').getTime();
+
+  const units = {
+    days: {
+      top: document.getElementById('cd-days-top'),
+      bottom: document.getElementById('cd-days-bottom'),
+      card: document.querySelector('.flip-card[data-unit="days"]')
+    },
+    hours: {
+      top: document.getElementById('cd-hours-top'),
+      bottom: document.getElementById('cd-hours-bottom'),
+      card: document.querySelector('.flip-card[data-unit="hours"]')
+    },
+    minutes: {
+      top: document.getElementById('cd-minutes-top'),
+      bottom: document.getElementById('cd-minutes-bottom'),
+      card: document.querySelector('.flip-card[data-unit="minutes"]')
+    },
+    seconds: {
+      top: document.getElementById('cd-seconds-top'),
+      bottom: document.getElementById('cd-seconds-bottom'),
+      card: document.querySelector('.flip-card[data-unit="seconds"]')
+    }
+  };
+
+  if(!units.days.top) return;
+
+  const previous = {};
+  const pad = n => String(n).padStart(2,'0');
+
+  function setUnit(name, value){
+    const u = units[name];
+    if(!u || !u.top || !u.bottom) return;
+    if(previous[name] !== value){
+      u.card.classList.remove('flipping');
+      void u.card.offsetWidth;
+      u.card.classList.add('flipping');
+      u.top.textContent = value;
+      u.bottom.textContent = value;
+      previous[name] = value;
+    }
+  }
+
+  function tick(){
+    let diff = target - Date.now();
+    if(diff <= 0){
+      setUnit('days','00');
+      setUnit('hours','00');
+      setUnit('minutes','00');
+      setUnit('seconds','00');
+      return;
+    }
+    const days = Math.floor(diff / 86400000); diff %= 86400000;
+    const hours = Math.floor(diff / 3600000); diff %= 3600000;
+    const minutes = Math.floor(diff / 60000); diff %= 60000;
+    const seconds = Math.floor(diff / 1000);
+
+    setUnit('days', String(days));
+    setUnit('hours', pad(hours));
+    setUnit('minutes', pad(minutes));
+    setUnit('seconds', pad(seconds));
+  }
+
+  tick();
+  setInterval(tick,1000);
+})();
+
+// =========================================================
+// V10.4 Guestbook — local browser storage
+// Static GitHub Pages has no shared database.
+// =========================================================
+(function(){
+  const form = document.getElementById('messageForm');
+  const list = document.getElementById('messageList');
+  const nameInput = document.getElementById('messageName');
+  const textInput = document.getElementById('messageText');
+  if(!form || !list || !nameInput || !textInput) return;
+
+  const KEY = 'wedding_guestbook_v1';
+
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, ch => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+    })[ch]);
+  }
+
+  function loadMessages(){
+    try{
+      return JSON.parse(localStorage.getItem(KEY) || '[]');
+    }catch(e){
+      return [];
+    }
+  }
+
+  function saveMessages(messages){
+    localStorage.setItem(KEY, JSON.stringify(messages));
+  }
+
+  function render(){
+    const messages = loadMessages();
+    if(!messages.length){
+      list.innerHTML = '<p class="message-empty">아직 축하 메시지가 없습니다.</p>';
+      return;
+    }
+    list.innerHTML = messages.slice().reverse().map(item => `
+      <article class="message-card">
+        <div class="message-card-head">
+          <span class="message-card-name">${escapeHtml(item.name)}</span>
+          <span class="message-card-date">${escapeHtml(item.date)}</span>
+        </div>
+        <p class="message-card-text">${escapeHtml(item.text)}</p>
+      </article>
+    `).join('');
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+    if(!name || !text) return;
+
+    const now = new Date();
+    const date = now.toLocaleDateString('ko-KR', {
+      year:'numeric', month:'2-digit', day:'2-digit'
+    });
+
+    const messages = loadMessages();
+    messages.push({name, text, date});
+    saveMessages(messages);
+
+    form.reset();
+    render();
+  });
+
+  render();
 })();

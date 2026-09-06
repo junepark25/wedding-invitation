@@ -1571,3 +1571,313 @@ body,
     margin-top:44px;
   }
 }
+
+
+/* =========================================================
+   V10.4 — Hero flip countdown / editorial gallery / guestbook
+   ========================================================= */
+
+/* HERO: all text over the photo, centered upper-middle */
+.hero{
+  padding:0 !important;
+}
+.hero-frame{
+  position:relative;
+}
+.hero-frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.18) 0%,
+    rgba(0,0,0,.06) 42%,
+    rgba(0,0,0,.18) 100%
+  );
+  pointer-events:none;
+}
+.hero-frame::after{
+  content:none !important;
+}
+.hero-overlay-content{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  top:24%;
+  transform:translateX(-50%);
+  width:min(88%,560px);
+  text-align:center;
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
+}
+.hero-couple{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:600;
+  letter-spacing:-.02em;
+}
+.hero-date{
+  margin:10px 0 16px;
+  font-size:clamp(13px,1.8vw,17px);
+  letter-spacing:.06em;
+}
+
+/* Compact flip countdown */
+.countdown-wrap{
+  position:static !important;
+  transform:none !important;
+  width:100% !important;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+}
+.flip-unit{
+  min-width:0;
+  text-align:center;
+}
+.flip-card{
+  position:relative;
+  height:50px;
+  border-radius:6px;
+  overflow:hidden;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 3px 12px rgba(0,0,0,.15);
+  perspective:500px;
+}
+.flip-top,.flip-bottom{
+  position:absolute;
+  left:0;
+  right:0;
+  height:50%;
+  display:flex;
+  justify-content:center;
+  overflow:hidden;
+  background:rgba(255,255,255,.96);
+  color:#2f3437;
+}
+.flip-top{
+  top:0;
+  align-items:flex-end;
+  border-bottom:1px solid rgba(0,0,0,.12);
+}
+.flip-bottom{
+  bottom:0;
+  align-items:flex-start;
+}
+.flip-top span,.flip-bottom span{
+  font-size:23px;
+  font-weight:650;
+  line-height:50px;
+  font-variant-numeric:tabular-nums;
+}
+.flip-bottom span{
+  transform:translateY(-25px);
+}
+.flip-card.flipping{
+  animation:flipPulse .34s ease;
+}
+@keyframes flipPulse{
+  0%{transform:rotateX(0deg)}
+  48%{transform:rotateX(-8deg)}
+  100%{transform:rotateX(0deg)}
+}
+.flip-label{
+  display:block;
+  margin-top:4px;
+  color:#fff;
+  font-size:8px;
+  letter-spacing:.05em;
+  text-shadow:0 1px 4px rgba(0,0,0,.5);
+}
+
+/* Remove old below-image hero metadata */
+.hero-meta{display:none !important}
+
+/* Traditional Korean wooden geese */
+.traditional-wedding-icon{
+  width:170px !important;
+  max-width:54% !important;
+}
+.traditional-wedding-icon .meeting-line{
+  opacity:.55;
+}
+.traditional-wedding-icon .wood-goose{
+  stroke:var(--ink);
+  fill:none;
+}
+
+/* Editorial gallery: varied but aligned collage */
+.gallery-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:8px !important;
+}
+.gallery-item,
+.gallery-item:nth-child(n){
+  width:100%;
+  border:0 !important;
+  padding:0 !important;
+  background:none !important;
+  box-shadow:none !important;
+  overflow:hidden;
+  border-radius:0;
+}
+.gallery-item img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block;
+}
+.gallery-wide{
+  grid-column:1/-1 !important;
+  aspect-ratio:16/10 !important;
+}
+.gallery-portrait{
+  aspect-ratio:4/5 !important;
+}
+.gallery-square{
+  aspect-ratio:1/1 !important;
+}
+.gallery-item:nth-child(6n+2),
+.gallery-item:nth-child(6n+5){
+  transform:translateY(8px);
+}
+
+/* Guestbook / message board */
+.message-section{
+  background:#fcfbf8;
+}
+.message-form{
+  max-width:680px;
+  margin:30px auto 0;
+}
+.message-form .field{
+  display:block;
+  margin-bottom:18px;
+}
+.message-form input,
+.message-form textarea{
+  width:100%;
+  margin-top:8px;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+}
+.message-submit{
+  width:100%;
+  margin-top:0 !important;
+}
+.message-list-wrap{
+  max-width:760px;
+  margin:54px auto 0;
+}
+.message-list-wrap h3{
+  margin:0 0 18px;
+  text-align:center;
+  color:var(--ink);
+  font-size:18px;
+  font-weight:500;
+}
+.message-list{
+  display:grid;
+  gap:12px;
+}
+.message-card{
+  padding:18px 20px;
+  background:#fff;
+  border:1px solid #e2ddd5;
+}
+.message-card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:8px;
+}
+.message-card-name{
+  color:var(--ink);
+  font-weight:600;
+}
+.message-card-date{
+  color:#9a9fa2;
+  font-size:10px;
+}
+.message-card-text{
+  margin:0;
+  color:#60696d;
+  font-size:13px;
+  line-height:1.8;
+  white-space:pre-wrap;
+}
+.message-empty{
+  margin:36px 0;
+  text-align:center;
+  color:#9a9a9a;
+}
+
+@media (max-width:767px){
+  .hero-overlay-content{
+    top:18%;
+    width:90%;
+  }
+  .hero-couple{
+    font-size:27px;
+  }
+  .hero-date{
+    margin:8px 0 12px;
+  }
+  .flip-card{
+    height:44px;
+  }
+  .flip-top span,.flip-bottom span{
+    font-size:20px;
+    line-height:44px;
+  }
+  .flip-bottom span{
+    transform:translateY(-22px);
+  }
+  .countdown-wrap{
+    gap:5px;
+  }
+  .traditional-wedding-icon{
+    width:138px !important;
+  }
+}
+
+@media (min-width:768px){
+  .hero-overlay-content{
+    top:22%;
+    width:min(70%,640px);
+  }
+  .countdown-wrap{
+    gap:9px;
+  }
+  .flip-card{
+    height:56px;
+  }
+  .flip-top span,.flip-bottom span{
+    font-size:27px;
+    line-height:56px;
+  }
+  .flip-bottom span{
+    transform:translateY(-28px);
+  }
+  .gallery-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    gap:10px !important;
+  }
+  .gallery-wide{
+    grid-column:span 2 !important;
+    aspect-ratio:16/10 !important;
+  }
+  .gallery-portrait{
+    aspect-ratio:4/5 !important;
+  }
+  .gallery-square{
+    aspect-ratio:1/1 !important;
+  }
+}
