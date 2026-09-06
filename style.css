@@ -566,10 +566,6 @@ legend,.field{font-size:12.5px;font-weight:600}
   font-size:36px;
 }
 
-/* 큰 화면에서는 모바일 카드가 가운데 보이게 */
-@media (min-width:431px){
-  body{padding:24px 0}
-}
 
 /* 작은 휴대폰 */
 @media (max-width:360px){
@@ -578,4 +574,283 @@ legend,.field{font-size:12.5px;font-weight:600}
   .portrait-card img{height:370px}
   .gallery-item img{height:170px}
   .gallery-item:nth-child(5n+1) img{height:235px}
+}
+
+
+/* =========================================================
+   V6 DESKTOP LAYOUT
+   모바일(<=767px)은 기존 430px 모바일 UI 유지,
+   데스크톱(>=768px)은 넓은 레이아웃으로 별도 구성
+   ========================================================= */
+@media (min-width:768px){
+
+  body{
+    padding:0;
+    background:#f3f0ea;
+  }
+
+  .phone{
+    width:min(100%, 980px);
+    max-width:980px;
+    margin:0 auto;
+    box-shadow:none;
+    background:var(--paper);
+  }
+
+  .topbar{
+    height:72px;
+    padding:0 38px;
+  }
+
+  .brand{
+    font-size:18px;
+  }
+
+  .hamburger span{
+    width:24px;
+  }
+
+  /* 데스크톱 Hero: 가로형으로 크게 보이되 과도하게 길지 않게 */
+  .hero-frame{
+    height:620px;
+    max-height:none;
+  }
+
+  .hero-frame img{
+    object-position:center 48%;
+  }
+
+  .hero-lettering{
+    right:34px;
+    top:28px;
+    font-size:12px;
+  }
+
+  .hero-meta{
+    padding:32px 30px 52px;
+  }
+
+  .hero-meta p{
+    font-size:30px;
+  }
+
+  .hero-meta strong{
+    font-size:21px;
+  }
+
+  .hero-meta span{
+    font-size:12px;
+  }
+
+  /* 일반 섹션 폭과 여백 */
+  .section{
+    padding:90px 70px;
+  }
+
+  .section-head h2{
+    font-size:34px;
+  }
+
+  .section-head p,
+  .section-head em{
+    font-size:14px;
+  }
+
+  /* Our Story는 사진과 글을 좌우 배치 */
+  .story{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    grid-template-areas:
+      "head head"
+      "photo copy"
+      "photo sign";
+    gap:34px 52px;
+    align-items:center;
+  }
+
+  .story .section-head{
+    grid-area:head;
+    margin-bottom:8px;
+  }
+
+  .story-image{
+    grid-area:photo;
+    width:100%;
+    height:560px;
+    margin:0;
+    object-fit:cover;
+  }
+
+  .story-copy{
+    grid-area:copy;
+    text-align:left;
+    font-size:14px;
+    line-height:2.05;
+    margin:0;
+  }
+
+  .sign{
+    grid-area:sign;
+    text-align:left;
+    margin:0;
+    font-size:20px;
+  }
+
+  /* 신랑/신부 소개를 2열 카드로 */
+  .couple-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:34px;
+    align-items:start;
+    padding-left:70px;
+    padding-right:70px;
+  }
+
+  .portrait-card{
+    width:100%;
+    max-width:none;
+    margin:0;
+  }
+
+  .portrait-card img{
+    height:560px;
+  }
+
+  .couple-section blockquote{
+    grid-column:1/-1;
+    margin-top:8px;
+    font-size:16px;
+  }
+
+  /* 갤러리: 데스크톱 3열 */
+  .gallery-section{
+    padding-left:42px;
+    padding-right:42px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+  }
+
+  .gallery-item img{
+    height:280px;
+  }
+
+  .gallery-item:nth-child(5n+1){
+    grid-column:auto;
+  }
+
+  .gallery-item:nth-child(7n+1){
+    grid-column:span 2;
+  }
+
+  .gallery-item:nth-child(7n+1) img{
+    height:380px;
+  }
+
+  /* 결혼식 안내는 좌우 2열 */
+  .wedding-section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:34px;
+    padding:90px 54px;
+  }
+
+  .event{
+    border:1px solid #e5e0d8;
+    padding:52px 28px 32px;
+    background:#fffefa;
+  }
+
+  .event+.event{
+    margin-top:0;
+  }
+
+  .map-placeholder{
+    margin:28px -28px -32px;
+    height:300px;
+  }
+
+  /* RSVP 데스크톱은 가운데 카드처럼 */
+  .rsvp-section{
+    max-width:760px;
+    margin:0 auto;
+    background:#f7f4ef;
+  }
+
+  /* 마지막 사진 */
+  .closing{
+    height:600px;
+  }
+
+  /* 첫 화면 모달도 데스크톱에 맞춰 확대 */
+  .opening{
+    padding:32px;
+  }
+
+  .opening-card{
+    width:520px;
+    max-width:520px;
+    padding:34px 28px 30px;
+  }
+
+  .opening-card h1{
+    font-size:32px;
+  }
+
+  .opening-photo{
+    max-width:380px;
+    height:380px;
+  }
+
+  .opening-card p{
+    font-size:14px;
+  }
+
+  .opening-card strong{
+    font-size:20px;
+  }
+
+  .opening-card .primary{
+    width:60%;
+  }
+
+  /* 메뉴도 데스크톱에서 과하게 퍼지지 않도록 */
+  .menu-inner{
+    width:480px;
+    margin:0 auto;
+  }
+
+  .menu-brand{
+    font-size:23px;
+  }
+
+  .menu-inner a{
+    font-size:22px;
+  }
+
+  .script{
+    font-size:26px;
+  }
+}
+
+/* 초대형 모니터 */
+@media (min-width:1200px){
+  .phone{
+    width:1040px;
+    max-width:1040px;
+  }
+
+  .hero-frame{
+    height:660px;
+  }
+
+  .story-image{
+    height:590px;
+  }
+
+  .portrait-card img{
+    height:590px;
+  }
 }
