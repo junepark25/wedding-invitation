@@ -2,254 +2,202 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#fbfaf6">
   <title>박병준 & 캐린 | Wedding Invitation</title>
   <meta name="description" content="박병준 & 캐린 결혼 초대장">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 첫 화면 -->
-  <div class="opening" id="opening">
-    <div class="opening-backdrop"></div>
-    <div class="opening-card">
-      <button class="xbtn" id="openingClose" aria-label="닫기">×</button>
-      <h1>결혼 초대장</h1>
-      <div class="media placeholder opening-photo" data-label="COVER PHOTO"></div>
-      <p class="opening-copy">
-        저희 두 사람, 사랑으로 하나 되어<br>
-        새로운 인생의 첫걸음을 내딛고자 합니다.<br>
-        귀한 걸음으로 함께하시어<br>
-        축복해 주시면 감사하겠습니다.
-      </p>
-      <p class="couple">박병준 &amp; 캐린</p>
-      <button class="primary" id="openInvitation">초대장 열기</button>
-    </div>
+
+<div class="opening" id="opening">
+  <img class="opening-bg" src="images/cover.webp" alt="">
+  <div class="opening-shade"></div>
+  <div class="opening-card">
+    <button class="xbtn" id="openingClose" aria-label="닫기">×</button>
+    <h1>결혼 초대장</h1>
+    <img class="opening-photo" src="images/cover.webp" alt="박병준과 캐린">
+    <p>저희 두 사람, 사랑으로 하나 되어<br>
+    새로운 인생의 첫걸음을 내딛고자 합니다.<br>
+    귀한 걸음으로 함께하시어<br>
+    축복해 주시면 감사하겠습니다.</p>
+    <strong>박병준 &amp; 캐린</strong>
+    <button class="primary" id="openInvitation">초대장 열기</button>
   </div>
+</div>
 
-  <!-- 전체 화면 메뉴 -->
-  <div class="menu-layer" id="menuLayer" aria-hidden="true">
-    <button class="xbtn menu-x" id="menuClose" aria-label="메뉴 닫기">×</button>
-
-    <svg class="botanical botanical-top" viewBox="0 0 180 220" aria-hidden="true">
-      <path d="M10 210 C55 155,70 95,150 15"/>
-      <path d="M47 157 C31 141,24 126,27 111"/>
-      <path d="M57 143 C79 137,92 125,100 108"/>
-      <path d="M84 105 C68 89,63 75,67 60"/>
-      <path d="M105 78 C126 72,140 59,149 40"/>
-      <ellipse cx="27" cy="111" rx="7" ry="17" transform="rotate(-35 27 111)"/>
-      <ellipse cx="98" cy="109" rx="7" ry="17" transform="rotate(45 98 109)"/>
-      <ellipse cx="67" cy="60" rx="7" ry="17" transform="rotate(-30 67 60)"/>
-      <ellipse cx="149" cy="40" rx="7" ry="17" transform="rotate(35 149 40)"/>
-    </svg>
-
-    <div class="menu-center">
-      <div class="menu-brand">박병준 &amp; 캐린</div>
-      <div class="tiny-en">WEDDING</div>
-      <nav>
-        <a href="#home">홈<small>Home</small></a>
-        <span></span>
-        <a href="#wedding">결혼식<small>Wedding</small></a>
-        <span></span>
-        <a href="#gallery">갤러리<small>Gallery</small></a>
-        <span></span>
-        <a href="#rsvp">참석 확인<small>RSVP</small></a>
-        <span></span>
-        <a href="#rsvp">축하 메시지<small>Message</small></a>
-      </nav>
-      <div class="script">Together<br>Always</div>
-    </div>
-
-    <svg class="botanical botanical-bottom" viewBox="0 0 180 220" aria-hidden="true">
-      <path d="M10 210 C55 155,70 95,150 15"/>
-      <path d="M47 157 C31 141,24 126,27 111"/>
-      <path d="M57 143 C79 137,92 125,100 108"/>
-      <path d="M84 105 C68 89,63 75,67 60"/>
-      <path d="M105 78 C126 72,140 59,149 40"/>
-      <ellipse cx="27" cy="111" rx="7" ry="17" transform="rotate(-35 27 111)"/>
-      <ellipse cx="98" cy="109" rx="7" ry="17" transform="rotate(45 98 109)"/>
-      <ellipse cx="67" cy="60" rx="7" ry="17" transform="rotate(-30 67 60)"/>
-      <ellipse cx="149" cy="40" rx="7" ry="17" transform="rotate(35 149 40)"/>
-    </svg>
+<div class="menu-layer" id="menuLayer" aria-hidden="true">
+  <button class="xbtn menu-x" id="menuClose">×</button>
+  <div class="leaf leaf-a">⌇</div><div class="leaf leaf-b">⌁</div>
+  <div class="menu-inner">
+    <div class="menu-brand">박병준 &amp; 캐린</div>
+    <div class="tiny">WEDDING</div>
+    <nav>
+      <a href="#home">홈<small>Home</small></a><i></i>
+      <a href="#story">우리 이야기<small>Our Story</small></a><i></i>
+      <a href="#gallery">갤러리<small>Gallery</small></a><i></i>
+      <a href="#wedding">결혼식<small>Wedding</small></a><i></i>
+      <a href="#rsvp">참석 확인<small>RSVP</small></a>
+    </nav>
+    <div class="script">Together Always</div>
   </div>
+</div>
 
-  <div class="phone-shell">
-    <header class="topbar">
-      <a class="brand" href="#home">박병준 &amp; 캐린</a>
-      <button class="hamburger" id="menuButton" aria-label="메뉴 열기"><i></i><i></i><i></i></button>
-    </header>
+<main class="phone">
+<header class="topbar">
+  <a href="#home" class="brand">박병준 &amp; 캐린</a>
+  <button class="hamburger" id="menuButton"><span></span><span></span><span></span></button>
+</header>
 
-    <!-- 홈 -->
-    <section id="home" class="home">
-      <div class="media placeholder hero-photo" data-label="MAIN PHOTO">
-        <span class="hero-tag">A NEW<br>BEGINNING</span>
-      </div>
-      <div class="home-copy">
-        <p>우연히 마주한 한순간이 소중한 인연이 되었고,<br>같은 시간을 보내며 같은 내일을 꿈꾸게 되었습니다.</p>
-        <p>2024년 9월 7일 처음 만나 서로의 마음을 열었고,<br>2026년 10월 10일 평생의 동행을 약속합니다.</p>
-        <p>처음 서로를 향했던 마음을 오래도록 간직하며,<br>기쁨은 나누고 어려움은 함께 이겨내며<br>서로에게 든든한 동반자가 되어<br>앞으로의 모든 계절을 함께하겠습니다.</p>
-        <p>저희 두 사람의 새로운 시작을<br>따뜻한 마음으로 축복해 주시면 감사하겠습니다.</p>
-        <strong>박병준 &amp; 캐린</strong>
-      </div>
-    </section>
-
-    <!-- 갤러리 -->
-    <section id="gallery" class="section gallery-section">
-      <div class="section-head">
-        <h2>OUR STORY</h2>
-        <span></span>
-        <p>함께한 순간, 그리고 앞으로의 시간</p>
-      </div>
-
-      <div class="slider" data-slider>
-        <div class="slides">
-          <figure class="slide active"><div class="media placeholder gallery-media" data-label="GALLERY 01"></div></figure>
-          <figure class="slide"><div class="media placeholder gallery-media" data-label="GALLERY 02"></div></figure>
-          <figure class="slide"><div class="media placeholder gallery-media" data-label="GALLERY 03"></div></figure>
-        </div>
-        <div class="slider-nav">
-          <button class="slider-prev" aria-label="이전">‹</button>
-          <span><b class="current">1</b> / <b class="total">3</b></span>
-          <button class="slider-next" aria-label="다음">›</button>
-        </div>
-      </div>
-
-      <div class="profile">
-        <h3>PHILIP</h3>
-        <p>박병준</p>
-      </div>
-
-      <div class="media placeholder bride-photo" data-label="CHARRINE PHOTO"></div>
-      <div class="profile">
-        <h3>CHARRINE</h3>
-        <p>캐린 웬</p>
-      </div>
-      <blockquote>“좋은 사람과 함께라면<br>어떤 계절도 아름답습니다.”</blockquote>
-
-      <svg class="corner-flower" viewBox="0 0 160 120" aria-hidden="true">
-        <path d="M10 110 C45 80,75 55,145 15"/>
-        <path d="M42 81 C25 75,19 65,20 53"/>
-        <path d="M70 61 C83 57,94 46,99 34"/>
-        <ellipse cx="20" cy="53" rx="7" ry="16" transform="rotate(-35 20 53)"/>
-        <ellipse cx="99" cy="34" rx="7" ry="16" transform="rotate(40 99 34)"/>
-      </svg>
-    </section>
-
-    <!-- 결혼식 -->
-    <section id="wedding" class="section wedding-section">
-      <article class="wedding-panel">
-        <div class="section-head">
-          <h2>한국 결혼식</h2>
-          <em>Wedding in Korea</em>
-        </div>
-        <p class="date-lg">2026년 10월 10일 토요일<br><strong>오전 11시 30분</strong></p>
-
-        <svg class="ring-icon" viewBox="0 0 120 70" aria-hidden="true">
-          <circle cx="47" cy="35" r="24"/><circle cx="73" cy="35" r="24"/><circle cx="60" cy="35" r="24"/>
-        </svg>
-
-        <h3 class="venue">전원예식장</h3>
-        <p class="address">강원특별자치도 양구군 양구읍 정림리 148-1</p>
-        <a class="primary map-link disabled" href="#" onclick="return false;">지도 보기 <span>›</span></a>
-
-        <div class="map-placeholder">
-          <div class="river"></div>
-          <i class="road r1"></i><i class="road r2"></i><i class="road r3"></i><i class="road r4"></i>
-          <span class="ml m1">박수근로285번길</span>
-          <span class="ml m2">양구군<br>평생학습관</span>
-          <span class="ml m3">박수근미술관</span>
-          <span class="ml m4">정중앙<br>테니스클럽</span>
-          <span class="ml venue-pin">■ 전원예식장</span>
-        </div>
-      </article>
-
-      <article class="wedding-panel jakarta-panel">
-        <div class="section-head">
-          <h2>인도네시아 결혼식</h2>
-          <em>Wedding in Jakarta</em>
-        </div>
-        <p class="date-lg serif">Saturday, 12 December 2026<br><strong>5:30 PM</strong></p>
-
-        <svg class="boat-icon" viewBox="0 0 260 130" aria-hidden="true">
-          <path d="M12 105 H245"/>
-          <path d="M52 92 H156 L177 104 H38 Z"/>
-          <path d="M72 92 V38 L108 88 Z"/>
-          <path d="M112 92 V28 L151 88 Z"/>
-          <path d="M198 103 V20 L235 88 Z"/>
-          <path d="M198 20 L178 80 H198"/>
-        </svg>
-
-        <h3 class="venue serif">Batavia Marina Sunda Kelapa</h3>
-        <p class="address">Ancol, Jakarta Utara 14430</p>
-        <a class="primary map-link disabled" href="#" onclick="return false;">View Map <span>›</span></a>
-
-        <svg class="palm" viewBox="0 0 180 260" aria-hidden="true">
-          <path d="M128 252 C119 182,102 114,79 47"/>
-          <path d="M84 58 C57 40,36 35,14 38"/>
-          <path d="M89 67 C59 70,34 82,16 101"/>
-          <path d="M95 78 C72 96,58 119,53 143"/>
-          <path d="M102 93 C108 65,122 41,145 22"/>
-          <path d="M107 107 C126 87,147 75,170 71"/>
-          <path d="M112 126 C137 119,155 121,176 131"/>
-        </svg>
-
-        <p class="tagline">SAME LOVE<br>A BRIGHTER TOMORROW</p>
-      </article>
-    </section>
-
-    <!-- 참석 확인 -->
-    <section id="rsvp" class="section rsvp-section">
-      <div class="section-head">
-        <h2>참석 유무</h2>
-        <span></span>
-        <p>저희의 특별한 날에 함께해 주실 수 있다면<br>참석 여부를 알려 주세요.</p>
-      </div>
-
-      <form id="rsvpForm">
-        <fieldset>
-          <legend>참석 여부</legend>
-          <div class="attend-toggle">
-            <label><input type="radio" name="attendance" value="yes"><span>참석하겠습니다</span></label>
-            <label><input type="radio" name="attendance" value="no"><span>참석 불가</span></label>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>참석하실 예식을 선택해 주세요.</legend>
-          <label class="check-row"><input type="checkbox" name="event" value="korea"><span></span>한국 예식 (2026년 10월 10일)</label>
-          <label class="check-row"><input type="checkbox" name="event" value="jakarta"><span></span>인도네시아 예식 (2026년 12월 12일)</label>
-          <label class="check-row"><input type="checkbox" name="event" value="both"><span></span>두 예식 모두</label>
-        </fieldset>
-
-        <label class="field">참석 인원
-          <select name="guests">
-            <option>1명</option><option>2명</option><option>3명</option><option>4명 이상</option>
-          </select>
-        </label>
-
-        <label class="field">축하 메시지 (선택사항)
-          <textarea name="message" rows="5" placeholder="따뜻한 축하의 마음을 남겨주세요."></textarea>
-        </label>
-
-        <button class="primary submit" type="submit">제출</button>
-        <p class="form-note" id="formNote">현재는 디자인 템플릿입니다. RSVP 저장 기능은 추후 연결합니다.</p>
-      </form>
-
-      <svg class="rsvp-flower" viewBox="0 0 180 200" aria-hidden="true">
-        <path d="M20 190 C58 146,78 104,143 15"/>
-        <path d="M59 145 C41 133,35 119,38 102"/>
-        <path d="M79 112 C102 103,115 90,125 71"/>
-        <ellipse cx="38" cy="102" rx="7" ry="17" transform="rotate(-35 38 102)"/>
-        <ellipse cx="125" cy="71" rx="7" ry="17" transform="rotate(40 125 71)"/>
-      </svg>
-    </section>
-
-    <footer>
-      <p>PHILIP &amp; CHARRINE</p>
-      <strong>박병준 &amp; 캐린</strong>
-    </footer>
+<section class="hero" id="home">
+  <div class="hero-frame">
+    <img src="images/main.webp" alt="박병준과 캐린 웨딩사진" fetchpriority="high">
+    <div class="hero-lettering">A NEW<br>BEGINNING</div>
   </div>
+  <div class="hero-meta">
+    <p>PHILIP &amp; CHARRINE</p>
+    <strong>박병준 &amp; 캐린</strong>
+    <span>10 · OCTOBER · 2026</span>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section class="section story" id="story">
+  <div class="section-head"><h2>OUR STORY</h2><i></i><p>함께한 순간, 그리고 앞으로의 시간</p></div>
+  <img class="story-image" src="images/story.webp" alt="함께한 순간" loading="lazy">
+  <div class="story-copy">
+    <p>우연히 마주한 한순간이 소중한 인연이 되었고,<br>같은 시간을 보내며 같은 내일을 꿈꾸게 되었습니다.</p>
+    <p>2024년 9월 7일 처음 만나 서로의 마음을 열었고,<br>2026년 10월 10일 평생의 동행을 약속합니다.</p>
+    <p>처음 서로를 향했던 마음을 오래도록 간직하며,<br>기쁨은 나누고 어려움은 함께 이겨내며<br>서로에게 든든한 동반자가 되어<br>앞으로의 모든 계절을 함께하겠습니다.</p>
+    <p>저희 두 사람의 새로운 시작을<br>따뜻한 마음으로 축복해 주시면 감사하겠습니다.</p>
+  </div>
+  <div class="sign">박병준 &amp; 캐린</div>
+</section>
+
+<section class="section couple-section">
+  <div class="portrait-card">
+    <img src="images/groom.webp" alt="신랑 박병준" loading="lazy">
+    <h3>PHILIP</h3><p>박병준</p>
+  </div>
+  <div class="portrait-card">
+    <img src="images/bride.webp" alt="신부 캐린 웬" loading="lazy">
+    <h3>CHARRINE</h3><p>캐린 웬</p>
+  </div>
+  <blockquote>“좋은 사람과 함께라면<br>어떤 계절도 아름답습니다.”</blockquote>
+</section>
+
+<section class="section gallery-section" id="gallery">
+  <div class="section-head"><h2>OUR MOMENTS</h2><i></i><p>서로를 닮아가는 우리의 순간들</p></div>
+  <div class="gallery-grid">
+        <button class="gallery-item" data-full="images/gallery-01.webp" aria-label="사진 1 크게 보기">
+          <img src="images/gallery-01.webp" alt="웨딩 갤러리 사진 1" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-02.webp" aria-label="사진 2 크게 보기">
+          <img src="images/gallery-02.webp" alt="웨딩 갤러리 사진 2" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-03.webp" aria-label="사진 3 크게 보기">
+          <img src="images/gallery-03.webp" alt="웨딩 갤러리 사진 3" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-04.webp" aria-label="사진 4 크게 보기">
+          <img src="images/gallery-04.webp" alt="웨딩 갤러리 사진 4" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-05.webp" aria-label="사진 5 크게 보기">
+          <img src="images/gallery-05.webp" alt="웨딩 갤러리 사진 5" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-06.webp" aria-label="사진 6 크게 보기">
+          <img src="images/gallery-06.webp" alt="웨딩 갤러리 사진 6" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-07.webp" aria-label="사진 7 크게 보기">
+          <img src="images/gallery-07.webp" alt="웨딩 갤러리 사진 7" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-08.webp" aria-label="사진 8 크게 보기">
+          <img src="images/gallery-08.webp" alt="웨딩 갤러리 사진 8" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-09.webp" aria-label="사진 9 크게 보기">
+          <img src="images/gallery-09.webp" alt="웨딩 갤러리 사진 9" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-10.webp" aria-label="사진 10 크게 보기">
+          <img src="images/gallery-10.webp" alt="웨딩 갤러리 사진 10" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-11.webp" aria-label="사진 11 크게 보기">
+          <img src="images/gallery-11.webp" alt="웨딩 갤러리 사진 11" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-12.webp" aria-label="사진 12 크게 보기">
+          <img src="images/gallery-12.webp" alt="웨딩 갤러리 사진 12" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-13.webp" aria-label="사진 13 크게 보기">
+          <img src="images/gallery-13.webp" alt="웨딩 갤러리 사진 13" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-14.webp" aria-label="사진 14 크게 보기">
+          <img src="images/gallery-14.webp" alt="웨딩 갤러리 사진 14" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-15.webp" aria-label="사진 15 크게 보기">
+          <img src="images/gallery-15.webp" alt="웨딩 갤러리 사진 15" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-16.webp" aria-label="사진 16 크게 보기">
+          <img src="images/gallery-16.webp" alt="웨딩 갤러리 사진 16" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-17.webp" aria-label="사진 17 크게 보기">
+          <img src="images/gallery-17.webp" alt="웨딩 갤러리 사진 17" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-18.webp" aria-label="사진 18 크게 보기">
+          <img src="images/gallery-18.webp" alt="웨딩 갤러리 사진 18" loading="lazy" decoding="async">
+        </button>
+        <button class="gallery-item" data-full="images/gallery-19.webp" aria-label="사진 19 크게 보기">
+          <img src="images/gallery-19.webp" alt="웨딩 갤러리 사진 19" loading="lazy" decoding="async">
+        </button>
+  </div>
+</section>
+
+<section class="section wedding-section" id="wedding">
+  <article class="event">
+    <div class="section-head"><h2>한국 결혼식</h2><em>Wedding in Korea</em></div>
+    <p class="date-lg">2026년 10월 10일 토요일<br><strong>오전 11시 30분</strong></p>
+    <div class="rings">◯◯◯</div>
+    <h3>전원예식장</h3>
+    <p class="address">강원특별자치도 양구군 양구읍 정림리 148-1</p>
+    <a class="primary disabled" href="#" onclick="return false;">지도 보기 ›</a>
+    <div class="map-placeholder">MAP<br><small>추후 약도 이미지 삽입</small></div>
+  </article>
+
+  <article class="event jakarta">
+    <div class="section-head"><h2>인도네시아 결혼식</h2><em>Wedding in Jakarta</em></div>
+    <p class="date-lg serif">Saturday, 12 December 2026<br><strong>5:30 PM</strong></p>
+    <div class="boat">⌁ △ △ ⌁</div>
+    <h3 class="serif">Batavia Marina Sunda Kelapa</h3>
+    <p class="address">Ancol, Jakarta Utara 14430</p>
+    <a class="primary disabled" href="#" onclick="return false;">View Map ›</a>
+    <p class="tagline">SAME LOVE<br>A BRIGHTER TOMORROW</p>
+  </article>
+</section>
+
+<section class="section rsvp-section" id="rsvp">
+  <div class="section-head"><h2>참석 유무</h2><i></i><p>저희의 특별한 날에 함께해 주실 수 있다면<br>참석 여부를 알려 주세요.</p></div>
+  <form id="rsvpForm">
+    <fieldset><legend>참석 여부</legend>
+      <div class="toggle">
+        <label><input type="radio" name="attendance"><span>참석하겠습니다</span></label>
+        <label><input type="radio" name="attendance"><span>참석 불가</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>참석하실 예식을 선택해 주세요.</legend>
+      <label class="check"><input type="checkbox"><span></span>한국 예식 (2026년 10월 10일)</label>
+      <label class="check"><input type="checkbox"><span></span>인도네시아 예식 (2026년 12월 12일)</label>
+      <label class="check"><input type="checkbox"><span></span>두 예식 모두</label>
+    </fieldset>
+    <label class="field">참석 인원<select><option>1명</option><option>2명</option><option>3명</option><option>4명 이상</option></select></label>
+    <label class="field">축하 메시지 (선택사항)<textarea rows="5" placeholder="따뜻한 축하의 마음을 남겨주세요."></textarea></label>
+    <button class="primary submit">제출</button>
+    <p class="form-note" id="formNote">현재는 디자인 템플릿입니다. RSVP 저장 기능은 추후 연결합니다.</p>
+  </form>
+</section>
+
+<section class="closing">
+  <img src="images/closing.webp" alt="박병준과 캐린" loading="lazy">
+  <div><span>THANK YOU</span><strong>PHILIP &amp; CHARRINE</strong><p>박병준 &amp; 캐린</p></div>
+</section>
+</main>
+
+<div class="lightbox" id="lightbox"><button id="lightboxClose">×</button><img id="lightboxImage" alt=""></div>
+<script src="script.js"></script>
 </body>
 </html>
