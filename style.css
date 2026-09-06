@@ -856,37 +856,205 @@ legend,.field{font-size:12.5px;font-weight:600}
 }
 
 
-/* ===== V7 MAP IMAGE FIX ===== */
-
+/* =========================================================
+   V7: Korea map + Jakarta marina image
+   ========================================================= */
 .korean-map-image{
-  display:block !important;
-  width:100% !important;
-  max-width:420px !important;
-  height:auto !important;
-  margin:24px auto 0 !important;
-  object-fit:contain !important;
-  visibility:visible !important;
-  opacity:1 !important;
+  display:block;
+  width:100%;
+  height:auto;
+  margin:22px auto 0;
+  object-fit:contain;
+  background:#fff;
 }
 
 .jakarta-marina-image{
-  display:block !important;
-  width:90% !important;
-  max-width:340px !important;
-  height:auto !important;
-  margin:28px auto 22px !important;
-  object-fit:contain !important;
-  visibility:visible !important;
-  opacity:1 !important;
+  display:block;
+  width:100%;
+  max-width:340px;
+  height:auto;
+  margin:22px auto 18px;
+  object-fit:contain;
 }
 
-/* 데스크톱 */
+/* Jakarta illustration is a dark line-art PNG.
+   Keep it contained and centered inside the event section. */
+.jakarta .jakarta-marina-image{
+  padding:0;
+}
+
 @media (min-width:768px){
   .korean-map-image{
-    max-width:100% !important;
+    max-width:100%;
+    margin-top:28px;
   }
 
   .jakarta-marina-image{
-    max-width:420px !important;
+    max-width:430px;
+    margin-top:28px;
+    margin-bottom:22px;
+  }
+}
+
+
+/* =========================================================
+   V8 — PHYSICAL INVITATION MATCH
+   Korean-first hierarchy / soft blue / generous white space
+   ========================================================= */
+:root{
+  --paper:#fdfcf9;
+  --ink:#4d7088;
+  --muted:#7c8990;
+  --line:#d9d8d2;
+  --accent:#4d7088;
+}
+
+body,
+.phone{
+  background:var(--paper);
+}
+
+.brand,
+.hero-meta p,
+.hero-meta strong,
+.section-head h2,
+.event h3,
+.sign,
+.menu-brand,
+.menu-inner a,
+.portrait-card h3{
+  color:var(--ink);
+}
+
+/* Korean title is primary; English is secondary. */
+.section-head h2{
+  letter-spacing:-0.02em;
+  font-weight:500;
+}
+.section-head em,
+.name-en{
+  display:block;
+  margin-top:7px;
+  color:#8b959a;
+  font-size:.82em;
+  font-weight:400;
+  letter-spacing:.04em;
+}
+
+.hero-meta p{
+  font-family:inherit;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+.hero-meta::after{
+  content:"PHILIP · CHARRINE";
+  display:block;
+  margin-top:8px;
+  color:#8b959a;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:10px;
+  letter-spacing:.16em;
+}
+
+/* Physical invitation-like restrained floral branch */
+.section-head::before{
+  content:"";
+  display:block;
+  width:52px;
+  height:22px;
+  margin:0 auto 16px;
+  opacity:.38;
+  background:
+    linear-gradient(155deg, transparent 46%, #7f8d92 47%, #7f8d92 50%, transparent 51%) center/100% 100% no-repeat;
+}
+
+.story-copy{
+  color:#4f5c62;
+}
+.story-copy p{
+  margin:0 0 22px;
+}
+
+/* Wedding information follows the same hierarchy as printed invitation. */
+.event .date-lg{
+  color:var(--ink);
+}
+.event .address{
+  color:#63747e;
+}
+.primary{
+  background:var(--ink);
+  border-color:var(--ink);
+}
+.korean-map-image{
+  border:0;
+  box-shadow:none;
+}
+
+/* Jakarta illustration is supporting decoration, not the visual headline. */
+.jakarta-marina-image{
+  max-width:280px !important;
+  opacity:.78;
+}
+.jakarta-blessing{
+  margin:30px auto 12px;
+  max-width:330px;
+  color:var(--ink);
+  font-size:13px;
+  line-height:1.9;
+  text-align:center;
+}
+.tagline{
+  margin-top:12px !important;
+  color:#9aa2a5 !important;
+  font-size:9px !important;
+  letter-spacing:.16em !important;
+}
+
+/* Portrait captions: Korean first */
+.portrait-card h3{
+  margin-bottom:4px;
+  font-size:22px;
+  font-weight:500;
+}
+.portrait-card .name-en{
+  margin-top:0;
+  font-size:13px;
+}
+
+/* Opening card follows the physical invitation copy style. */
+.opening-card h1{
+  color:var(--ink);
+  font-weight:500;
+}
+.opening-card p{
+  color:#56676f;
+  line-height:1.95;
+}
+.opening-card strong{
+  color:var(--ink);
+}
+
+/* More white space, like the printed stationery. */
+.section{
+  border-top:0;
+}
+.event{
+  box-shadow:none;
+}
+
+@media (max-width:767px){
+  .section{
+    padding-top:72px;
+    padding-bottom:72px;
+  }
+  .jakarta-marina-image{
+    max-width:245px !important;
+  }
+}
+
+@media (min-width:768px){
+  .jakarta-marina-image{
+    max-width:330px !important;
   }
 }
