@@ -1058,3 +1058,101 @@ body,
     max-width:330px !important;
   }
 }
+
+
+/* =========================================================
+   V9 refinements
+   - Korean-first name hierarchy
+   - high-resolution Korean map
+   - minimal wedding ring icon
+   ========================================================= */
+
+.name-en{
+  display:block;
+  margin-top:6px !important;
+  color:#8b959a !important;
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:12px !important;
+  font-weight:400 !important;
+  letter-spacing:.10em !important;
+}
+
+/* Do not auto-insert another English name under the hero. */
+.hero-meta::after{
+  content:none !important;
+}
+
+.hero-meta .name-en{
+  font-size:12px !important;
+  letter-spacing:.14em !important;
+}
+
+.portrait-card h3{
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  font-size:21px;
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+.portrait-card .name-en{
+  margin-top:5px !important;
+  font-size:12px !important;
+}
+
+/* High-resolution printed invitation map */
+.korean-map-image{
+  display:block !important;
+  width:100% !important;
+  max-width:520px !important;
+  height:auto !important;
+  margin:26px auto 0 !important;
+  object-fit:contain !important;
+  image-rendering:auto;
+  background:#fff;
+}
+
+/* Minimal two-ring icon */
+.ring-icon{
+  display:block;
+  width:78px;
+  height:auto;
+  margin:14px auto 18px;
+  fill:none;
+  stroke:var(--ink);
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.ring-icon path{
+  fill:none;
+  stroke:var(--ink);
+}
+
+/* Keep the Korean name visually dominant at the closing. */
+.closing strong{
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  font-size:21px;
+  font-weight:500;
+}
+.closing p{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:11px;
+  letter-spacing:.13em;
+}
+
+@media (max-width:767px){
+  .korean-map-image{
+    width:calc(100% + 4px) !important;
+    max-width:none !important;
+    margin-left:-2px !important;
+    margin-right:-2px !important;
+  }
+}
+
+@media (min-width:768px){
+  .korean-map-image{
+    max-width:560px !important;
+  }
+}
