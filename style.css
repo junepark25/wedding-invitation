@@ -1156,3 +1156,418 @@ body,
     max-width:560px !important;
   }
 }
+
+
+/* ===== V10: countdown / framed gallery / gift section ===== */
+.countdown-wrap{
+  position:absolute; left:50%; bottom:26px; transform:translateX(-50%);
+  z-index:4; display:grid; grid-template-columns:repeat(4,1fr);
+  gap:7px; width:min(92%,410px);
+}
+.count-box{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
+.count-box b{
+  display:grid;place-items:center;width:100%;height:50px;border-radius:8px;
+  background:rgba(255,255,255,.94);color:#303437;font-size:24px;font-weight:600;
+  box-shadow:0 3px 12px rgba(0,0,0,.14);font-variant-numeric:tabular-nums;
+}
+.count-box span{color:white;font-size:8px;letter-spacing:.04em;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.hero-frame::after{
+  content:""; position:absolute; inset:auto 0 0; height:145px;
+  background:linear-gradient(transparent,rgba(0,0,0,.30)); z-index:2; pointer-events:none;
+}
+.hero-lettering{z-index:4}
+
+/* Uniform framed gallery */
+.gallery-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:10px !important;
+  columns:auto !important;
+}
+.gallery-item,.gallery-item:nth-child(n){
+  grid-column:auto !important;
+  width:100%; aspect-ratio:4/5; overflow:hidden;
+  border:8px solid #fff; background:#fff; border-radius:2px;
+  box-shadow:0 1px 8px rgba(0,0,0,.08);
+}
+.gallery-item img,.gallery-item:nth-child(n) img{
+  width:100% !important;height:100% !important;
+  object-fit:cover !important;object-position:center !important;display:block;
+}
+
+/* Gift section */
+.gift-section{background:var(--ink);color:#fff;text-align:center}
+.gift-section .section-head h2{color:#fff}
+.gift-section .section-head em,.gift-section .section-head p{color:rgba(255,255,255,.72)}
+.gift-section .section-head i{background:#fff;opacity:.55}
+.gift-card{max-width:520px;margin:18px auto 0}
+.gift-label{margin:0 0 8px;color:rgba(255,255,255,.65);font-size:12px}
+.account-copy{
+  width:100%;border:1px solid rgba(255,255,255,.4);
+  background:#fff;color:var(--ink);padding:18px 20px;cursor:pointer;
+}
+.account-name{display:block;font-size:18px;font-weight:600}
+.account-hint{display:block;margin-top:7px;color:#7f898e;font-size:11px}
+.copy-toast{min-height:20px;margin:16px 0 0;color:#fff;font-size:12px}
+
+@media (min-width:768px){
+  .countdown-wrap{bottom:40px;gap:12px;width:min(78%,560px)}
+  .count-box b{height:64px;font-size:30px}
+  .count-box span{font-size:9px}
+  .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:14px !important}
+  .gallery-item,.gallery-item:nth-child(n){border-width:10px}
+}
+
+
+/* =========================================================
+   V10.2 — Wedding section alignment + traditional Korea icon
+   ========================================================= */
+
+.wedding-section{
+  align-items:start;
+}
+
+.event{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.event .section-head{
+  width:100%;
+  min-height:92px;
+}
+
+.event .date-lg{
+  min-height:82px;
+  margin:24px 0 10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.event-visual{
+  width:100%;
+  height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:2px 0 10px;
+}
+
+.traditional-wedding-icon{
+  width:112px;
+  height:auto;
+  fill:none;
+  stroke:var(--ink);
+  stroke-width:2.1;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.jakarta-visual .jakarta-marina-image{
+  display:block !important;
+  width:auto !important;
+  max-width:92% !important;
+  max-height:220px !important;
+  height:auto !important;
+  margin:0 auto !important;
+  object-fit:contain !important;
+  opacity:.82;
+}
+
+.event-venue{
+  min-height:36px;
+  margin:8px 0 6px !important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.event .address{
+  min-height:42px;
+  margin:0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.event-map-button{
+  margin-top:20px !important;
+  min-width:150px;
+}
+
+.event-extra{
+  width:100%;
+  margin-top:28px;
+}
+
+.korean-map-image{
+  display:block !important;
+  width:100% !important;
+  max-width:520px !important;
+  height:auto !important;
+  margin:0 auto !important;
+  object-fit:contain !important;
+  background:#fff;
+}
+
+.map-caption{
+  margin:8px 0 0;
+  color:var(--ink);
+  font-size:12px;
+}
+
+.jakarta-extra{
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.jakarta-blessing{
+  margin:0 auto 12px !important;
+}
+
+/* mobile: same vertical rhythm, stacked */
+@media (max-width:767px){
+  .event .section-head{
+    min-height:auto;
+  }
+
+  .event .date-lg{
+    min-height:auto;
+  }
+
+  .event-visual{
+    height:210px;
+  }
+
+  .traditional-wedding-icon{
+    width:96px;
+  }
+
+  .jakarta-visual .jakarta-marina-image{
+    max-height:185px !important;
+  }
+
+  .event-venue,
+  .event .address{
+    min-height:auto;
+  }
+
+  .event-extra{
+    margin-top:24px;
+  }
+}
+
+/* desktop: two panels stay visually synchronized */
+@media (min-width:768px){
+  .wedding-section{
+    grid-template-columns:1fr 1fr !important;
+    gap:0 !important;
+    padding:0 !important;
+    background:var(--paper);
+  }
+
+  .event{
+    padding:72px 44px 46px !important;
+    border:0 !important;
+    background:var(--paper) !important;
+  }
+
+  .event-jakarta{
+    border-left:1px solid #e3dfd7 !important;
+  }
+
+  .event+.event{
+    margin-top:0 !important;
+  }
+
+  .event-visual{
+    height:270px;
+  }
+
+  .traditional-wedding-icon{
+    width:120px;
+  }
+
+  .jakarta-visual .jakarta-marina-image{
+    max-height:235px !important;
+  }
+
+  .korean-map-image{
+    max-width:100% !important;
+  }
+}
+
+
+/* =========================================================
+   V10.3 — Traditional Korea motif / no Korea map image
+   / perfectly aligned map buttons and matching messages
+   ========================================================= */
+
+.event{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.event .section-head{
+  width:100%;
+}
+
+.event .date-lg{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.event-visual{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Traditional Korean wedding: paired wild geese */
+.traditional-wedding-icon{
+  display:block;
+  width:148px;
+  max-width:48%;
+  height:auto;
+  fill:none;
+  stroke:var(--ink);
+  stroke-width:2.05;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.traditional-wedding-icon .traditional-base{
+  opacity:.62;
+}
+
+.jakarta-visual .jakarta-marina-image{
+  display:block !important;
+  width:auto !important;
+  max-width:92% !important;
+  height:auto !important;
+  margin:0 auto !important;
+  object-fit:contain !important;
+  opacity:.82;
+}
+
+/* force venue/address/button to share same vertical grid */
+.event-venue{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+.event .address{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.event-map-button{
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  min-width:154px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.event-extra{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+}
+.korea-blessing,
+.jakarta-blessing{
+  margin:0 auto 12px !important;
+  max-width:360px;
+  color:var(--ink);
+  font-size:13px;
+  line-height:1.9;
+  text-align:center;
+}
+.event-extra .tagline{
+  margin:0 !important;
+  color:#9aa2a5 !important;
+  font-size:9px !important;
+  letter-spacing:.14em !important;
+}
+
+/* mobile */
+@media (max-width:767px){
+  .event .section-head{min-height:auto}
+  .event .date-lg{min-height:auto}
+  .event-visual{height:210px;margin:4px 0 8px}
+  .traditional-wedding-icon{width:120px;max-width:42%}
+  .jakarta-visual .jakarta-marina-image{max-height:185px !important}
+  .event-venue{min-height:auto;margin-top:6px !important}
+  .event .address{min-height:auto}
+  .event-map-button{margin-top:20px !important}
+  .event-extra{
+    min-height:auto;
+    margin-top:30px;
+  }
+}
+
+/* desktop: synchronized row heights */
+@media (min-width:768px){
+  .wedding-section{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:0 !important;
+    padding:0 !important;
+  }
+
+  .event{
+    padding:72px 44px 52px !important;
+    border:0 !important;
+    background:var(--paper) !important;
+  }
+  .event-jakarta{
+    border-left:1px solid #e3dfd7 !important;
+  }
+
+  .event .section-head{min-height:98px}
+  .event .date-lg{
+    min-height:92px;
+    margin:20px 0 6px !important;
+  }
+  .event-visual{
+    height:300px;
+    margin:0 0 6px;
+  }
+  .traditional-wedding-icon{
+    width:160px;
+    max-width:50%;
+  }
+  .jakarta-visual .jakarta-marina-image{
+    max-height:250px !important;
+  }
+  .event-venue{
+    min-height:52px;
+    margin:4px 0 0 !important;
+  }
+  .event .address{
+    min-height:54px;
+    margin:0 !important;
+  }
+  .event-map-button{
+    margin-top:18px !important;
+  }
+  .event-extra{
+    min-height:170px;
+    margin-top:44px;
+  }
+}

@@ -53,7 +53,13 @@
   <div class="hero-frame">
     <img src="images/main.webp" alt="박병준과 캐린 웨딩사진" fetchpriority="high">
     <div class="hero-lettering">A NEW<br>BEGINNING</div>
-  </div>
+      <div class="countdown-wrap" aria-label="결혼식까지 남은 시간">
+      <div class="count-box"><b id="cd-days">--</b><span>DAYS</span></div>
+      <div class="count-box"><b id="cd-hours">--</b><span>HOURS</span></div>
+      <div class="count-box"><b id="cd-minutes">--</b><span>MINUTES</span></div>
+      <div class="count-box"><b id="cd-seconds">--</b><span>SECONDS</span></div>
+    </div>
+</div>
   <div class="hero-meta">
     <p>박병준 &amp; 캐린</p>
     <strong class="name-en">PHILIP · CHARRINE</strong>
@@ -151,39 +157,121 @@
   </div>
 </section>
 
+
+
 <section class="section wedding-section" id="wedding">
-  <article class="event">
-    <div class="section-head"><h2>한국 결혼식</h2><em>Wedding in Korea</em></div>
-    <p class="date-lg">2026년 10월 10일 토요일<br><strong>오전 11시 30분</strong></p>
-    <svg class="ring-icon" viewBox="0 0 120 70" role="img" aria-label="결혼 반지">
-      <circle cx="48" cy="37" r="22"></circle>
-      <circle cx="72" cy="37" r="22"></circle>
-      <path d="M72 14 L78 6 L84 14 L78 20 Z"></path>
-    </svg>
-    <h3>전원예식장</h3>
+
+  <article class="event event-korea">
+    <div class="section-head">
+      <h2>한국 결혼식</h2>
+      <em>Wedding in Korea</em>
+    </div>
+
+    <p class="date-lg">
+      2026년 10월 10일 토요일<br>
+      <strong>오전 11시 30분</strong>
+    </p>
+
+    <div class="event-visual traditional-visual" aria-label="한국 전통 혼례 장식">
+      <svg class="traditional-wedding-icon" viewBox="0 0 220 170" role="img" aria-label="전통 혼례 기러기 한 쌍">
+        <!-- two stylized wild geese, a traditional Korean wedding motif -->
+        <g class="goose goose-left">
+          <path d="M92 86
+                   C78 72 60 67 43 73
+                   C27 79 22 94 30 106
+                   C39 120 61 121 78 112
+                   C92 105 99 95 92 86Z"/>
+          <path d="M45 76
+                   C34 67 30 55 35 45
+                   C39 37 47 34 54 38
+                   C61 42 64 51 60 58
+                   C56 66 50 70 45 76Z"/>
+          <path d="M30 106 C21 112 15 121 14 130"/>
+          <path d="M71 82 C62 88 57 96 57 106"/>
+          <path d="M79 76 C73 70 68 63 67 55"/>
+        </g>
+
+        <g class="goose goose-right" transform="translate(220 0) scale(-1 1)">
+          <path d="M92 86
+                   C78 72 60 67 43 73
+                   C27 79 22 94 30 106
+                   C39 120 61 121 78 112
+                   C92 105 99 95 92 86Z"/>
+          <path d="M45 76
+                   C34 67 30 55 35 45
+                   C39 37 47 34 54 38
+                   C61 42 64 51 60 58
+                   C56 66 50 70 45 76Z"/>
+          <path d="M30 106 C21 112 15 121 14 130"/>
+          <path d="M71 82 C62 88 57 96 57 106"/>
+          <path d="M79 76 C73 70 68 63 67 55"/>
+        </g>
+
+        <!-- subtle traditional cloud / taegeuk-like base -->
+        <path class="traditional-base" d="M52 136
+          C69 128 84 128 99 136
+          C108 141 116 141 125 136
+          C139 128 154 128 170 136"/>
+        <path class="traditional-base" d="M70 146
+          C86 140 98 140 110 146
+          C122 152 136 152 151 146"/>
+      </svg>
+    </div>
+
+    <h3 class="event-venue">전원예식장</h3>
     <p class="address">강원특별자치도 양구군 양구읍 정림리 148-1</p>
-    <a class="primary disabled" href="#" onclick="return false;">지도 보기 ›</a>
-    <img class="korean-map-image"
-      src="images/korean-map-highres.png"
-      alt="전원예식장 약도"
-      loading="lazy">
+
+    <a class="primary event-map-button"
+       href="https://map.naver.com/p/search/%EC%A0%84%EC%9B%90%EC%98%88%EC%8B%9D%EC%9E%A5"
+       target="_blank" rel="noopener noreferrer">지도 보기 ›</a>
+
+    <div class="event-extra korea-extra">
+      <p class="korea-blessing">
+        저희 두 사람의 새로운 시작에<br>
+        따뜻한 축복을 더해 주시면 감사하겠습니다.
+      </p>
+      <p class="tagline">TOGETHER · THROUGH EVERY SEASON</p>
+    </div>
   </article>
 
-  <article class="event jakarta">
-    <div class="section-head"><h2>인도네시아 결혼식</h2><em>Wedding in Jakarta</em></div>
-    <p class="date-lg serif">Saturday, 12 December 2026<br><strong>5:30 PM</strong></p>
-    <img class="jakarta-marina-image"
-      src="images/jakarta-marina.png"
-      alt="Batavia Marina Sunda Kelapa"
-      loading="lazy">
-    <h3 class="serif">Batavia Marina Sunda Kelapa</h3>
+  <article class="event jakarta event-jakarta">
+    <div class="section-head">
+      <h2>인도네시아 결혼식</h2>
+      <em>Wedding in Jakarta</em>
+    </div>
+
+    <p class="date-lg serif">
+      Saturday, 12 December 2026<br>
+      <strong>5:30 PM</strong>
+    </p>
+
+    <div class="event-visual jakarta-visual">
+      <img class="jakarta-marina-image"
+           src="./images/jakarta-marina.png"
+           alt="Batavia Marina Sunda Kelapa"
+           loading="lazy"
+           decoding="async">
+    </div>
+
+    <h3 class="event-venue serif">Batavia Marina Sunda Kelapa</h3>
     <p class="address">Ancol, Jakarta Utara 14430</p>
-    <a class="primary disabled" href="#" onclick="return false;">View Map ›</a>
-    <p class="jakarta-blessing">자카르타에서 이어질 저희의 새로운 시작에도<br>
-      따뜻한 축복을 보내 주시면 감사하겠습니다.</p>
+
+    <a class="primary event-map-button"
+       href="https://www.google.com/maps/search/?api=1&query=Batavia+Marina+Sunda+Kelapa"
+       target="_blank" rel="noopener noreferrer">View Map ›</a>
+
+    <div class="event-extra jakarta-extra">
+      <p class="jakarta-blessing">
+        자카르타에서 이어질 저희의 새로운 시작에도<br>
+        따뜻한 축복을 보내 주시면 감사하겠습니다.
+      </p>
       <p class="tagline">SAME LOVE · A BRIGHTER TOMORROW</p>
+    </div>
   </article>
+
 </section>
+
+
 
 <section class="section rsvp-section" id="rsvp">
   <div class="section-head"><h2>참석 유무</h2><i></i><p>저희의 특별한 날에 함께해 주실 수 있다면<br>참석 여부를 알려 주세요.</p></div>
@@ -204,6 +292,40 @@
     <button class="primary submit">제출</button>
     <p class="form-note" id="formNote">현재는 디자인 템플릿입니다. RSVP 저장 기능은 추후 연결합니다.</p>
   </form>
+</section>
+
+
+<section class="section gift-section" id="gift">
+  <div class="section-head">
+    <h2>마음 전하기</h2>
+    <em>Send Your Blessings</em>
+    <i></i>
+    <p>축하의 마음을 전해 주시는 분들을 위해<br>계좌 정보를 안내드립니다.</p>
+  </div>
+
+  <div class="gift-card">
+    <p class="gift-label">신랑측</p>
+    <button class="account-copy" type="button"
+      data-account="0000000-0000-00"
+      data-bank="농협"
+      data-holder="박병준">
+      <span class="account-name">박병준</span>
+      <span class="account-hint">이름을 누르면 계좌번호가 복사됩니다.</span>
+    </button>
+  </div>
+
+  <div class="gift-card">
+    <p class="gift-label">신부측</p>
+    <button class="account-copy" type="button"
+      data-account="계좌번호를 입력해 주세요"
+      data-bank="은행명을 입력해 주세요"
+      data-holder="캐린 웬">
+      <span class="account-name">캐린 웬</span>
+      <span class="account-hint">이름을 누르면 계좌번호가 복사됩니다.</span>
+    </button>
+  </div>
+
+  <p class="copy-toast" id="copyToast" role="status" aria-live="polite"></p>
 </section>
 
 <section class="closing">
