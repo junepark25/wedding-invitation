@@ -1,34 +1,77 @@
+
 :root{
-  --ivory:#FAF9F6;--paper:#FFFDF9;--blue:#315F82;--ink:#45494C;
-  --muted:#8A8E90;--line:#DED9D0;--soft:#F4F1EB;--beige:#C99B63;
+  --paper:#fbfaf6;
+  --white:#fffefa;
+  --blue:#315f82;
+  --ink:#474c4f;
+  --muted:#8b8e90;
+  --line:#d9d5cd;
+  --soft:#f1eee8;
+  --accent:#c99b63;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:#eae7e1;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
-button,input,select,textarea{font:inherit}.serif{font-family:Georgia,"Times New Roman",serif}
-.phone{width:min(100%,480px);margin:auto;background:var(--paper);min-height:100vh;box-shadow:0 0 30px #00000012}
-.topbar{height:62px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:#fffdf9f2;backdrop-filter:blur(12px);border-bottom:1px solid #eee9e1}
-.brand{text-decoration:none;color:var(--blue);font-family:Georgia,"Noto Serif KR",serif}
-.hamburger,.icon-button{border:0;background:transparent;cursor:pointer;color:var(--blue)}
-.hamburger span{display:block;width:23px;height:1.5px;background:var(--blue);margin:5px}
-.hero{min-height:calc(100svh - 62px);padding:18px 18px 55px;text-align:center}
-.photo-placeholder{position:relative;display:grid;place-items:center;background:linear-gradient(135deg,#d6d0c6,#f0ede7 50%,#cec7bc);color:#8c8881;font:11px Georgia,serif;letter-spacing:.16em;overflow:hidden}
-.portrait{aspect-ratio:4/5}.landscape{aspect-ratio:4/3}.square{aspect-ratio:1/1}
-.hero-photo{margin-bottom:28px}.hero-caption{position:absolute;right:18px;top:18px;color:white;text-align:right;font-size:10px;line-height:1.5}
-.hero-en{margin:0;color:var(--blue);font:500 27px Georgia,serif;letter-spacing:.05em}.hero-ko{margin:7px 0 0;color:var(--blue);font-size:18px}.date{margin-top:18px;font-size:12px;letter-spacing:.18em;color:#777}
-.section{padding:78px 24px;text-align:center}.alt{background:var(--soft)}
-.small-en{color:var(--blue);font:500 12px Georgia,serif;letter-spacing:.18em}.section h2{margin:10px 0;color:var(--blue);font:500 29px/1.45 Georgia,"Noto Serif KR",serif}
-.section-sub{font-size:13px;color:var(--muted);line-height:1.7}.divider{width:42px;height:1px;background:var(--blue);opacity:.5;margin:22px auto 30px}
-.story .landscape{margin-bottom:30px}.story-copy{font-size:14px;line-height:2}.story-copy p{margin:0 0 18px}.couple-ko{color:var(--blue);font:500 20px Georgia,"Noto Serif KR",serif}
-.gallery-card{margin-top:32px}.gallery-card h3{margin:18px 0 4px;color:var(--blue);font:500 25px Georgia,serif}.gallery-card p{margin:0;color:var(--blue)}
-.gallery-count{text-align:right!important;color:#999!important;font-size:11px;margin-top:8px!important}blockquote{margin:36px 0 0;line-height:1.9;color:#62676a}
-.event-card{margin-top:35px;padding:34px 18px 28px;background:white;border:1px solid var(--line)}
-.event-title{color:var(--blue);font:500 26px Georgia,"Noto Serif KR",serif}.event-time{color:var(--blue);font-size:17px;line-height:1.8}.rings{font-size:42px;letter-spacing:-14px;color:var(--blue);margin:15px 12px 20px 0}.boat{color:var(--blue);font-size:40px;margin:25px 0}
-.venue{color:var(--blue);font-size:19px;font-weight:700}.address{font-size:12px;color:#777;line-height:1.7}.primary-button{display:inline-block;margin-top:20px;padding:12px 24px;border:0;background:var(--blue);color:white;text-decoration:none;cursor:pointer}.disabled-link{opacity:.78}
-.map-placeholder{height:240px;margin-top:25px;background:#f2efe9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#999}.map-placeholder strong{color:var(--beige)}.map-placeholder small{font-size:10px}
-.tagline{margin:45px 0 5px;color:var(--blue);font:12px/1.8 Georgia,serif;letter-spacing:.16em}
-form{text-align:left;margin-top:30px}form>label,fieldset{display:block;margin:0 0 20px;border:0;padding:0;font-size:13px}legend{margin-bottom:9px}input[type=text],select,textarea{width:100%;margin-top:8px;padding:13px;border:1px solid var(--line);background:white;color:var(--ink);outline:none}
-.two{display:flex;gap:8px}.choice{flex:1;padding:12px 7px;background:white;border:1px solid var(--line);text-align:center}.check{display:block;padding:12px;background:white;border:1px solid var(--line);margin-top:7px}.full{width:100%}.form-note{text-align:center;font-size:11px;color:#999;line-height:1.6}
-footer{padding:85px 24px 95px;text-align:center;background:var(--paper)}footer h2{color:var(--blue);font:500 25px Georgia,serif;letter-spacing:.08em}
-.opening{position:fixed;inset:0;z-index:100;background:#0006;display:flex;align-items:center;justify-content:center;padding:14px}.opening.hidden{display:none}.opening-card{width:min(100%,430px);max-height:94svh;overflow:auto;background:white;border-radius:18px;padding:22px 18px 30px;text-align:center}.opening-x{float:right;font-size:28px}.opening-card h1{clear:both;color:var(--blue);font:500 29px Georgia,"Noto Serif KR",serif}.opening-card .square{width:92%;margin:20px auto}.opening-copy{font-size:14px;line-height:2}
-.menu-panel{position:fixed;inset:0;z-index:90;background:#faf9f6fa;display:none}.menu-panel.open{display:block}.menu-x{position:absolute;right:20px;top:18px;font-size:32px}.menu-content{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}.menu-content nav{display:flex;flex-direction:column;gap:24px;margin:30px 0}.menu-content a{text-align:center;text-decoration:none;color:var(--blue);font:21px Georgia,"Noto Serif KR",serif}.menu-content small{display:block;color:#999;font:11px sans-serif;margin-top:5px}.menu-footer{color:#999;font:italic 13px Georgia,serif}
-@media(max-width:390px){.section{padding-left:20px;padding-right:20px}.section h2{font-size:26px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e8e6e0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+button,input,select,textarea{font:inherit}
+.serif{font-family:Georgia,"Times New Roman",serif}
+.phone-shell{width:min(100%,480px);margin:auto;min-height:100vh;background:var(--paper);box-shadow:0 0 32px #00000010;overflow:hidden}
+.topbar{height:62px;position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:#fffefaf2;backdrop-filter:blur(10px);border-bottom:1px solid #ece8e1}
+.brand{color:var(--blue);text-decoration:none;font:500 16px Georgia,"Noto Serif KR",serif}
+.hamburger{border:0;background:none;padding:9px;cursor:pointer}
+.hamburger i{display:block;width:20px;height:1.5px;background:var(--blue);margin:4px}
+.media{position:relative;background:linear-gradient(135deg,#d7d0c5,#f1ede6 50%,#cfc7bb);overflow:hidden}
+.placeholder:after{content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;color:#8b877f;font:10px Georgia,serif;letter-spacing:.16em}
+.hero-photo{aspect-ratio:4/4.9}
+.hero-tag{position:absolute;right:18px;top:18px;color:#fff;z-index:2;text-align:right;font:10px/1.45 Georgia,serif;letter-spacing:.22em}
+.home-copy{padding:28px 24px 64px;text-align:center;font-size:14px;line-height:2.05}
+.home-copy p{margin:0 0 17px}
+.home-copy strong{display:block;margin-top:32px;color:var(--blue);font:500 20px Georgia,"Noto Serif KR",serif}
+.section{position:relative;padding:72px 20px;background:var(--paper)}
+.section-head{text-align:center}
+.section-head h2{margin:0;color:var(--blue);font:500 29px Georgia,"Noto Serif KR",serif;letter-spacing:.02em}
+.section-head span{display:block;width:34px;height:1px;background:var(--blue);opacity:.55;margin:17px auto}
+.section-head p,.section-head em{margin:0;color:#808487;font-size:12px;font-style:normal}
+.gallery-section{padding-left:18px;padding-right:18px}
+.slider{margin-top:28px}
+.slide{display:none;margin:0}.slide.active{display:block}
+.gallery-media{aspect-ratio:4/5.25}
+.slider-nav{display:flex;align-items:center;justify-content:space-between;margin:8px 2px 0;color:#7d8284;font:13px Georgia,serif}
+.slider-nav button{border:0;background:none;color:#7d8284;font-size:28px;cursor:pointer;padding:0 10px}
+.profile{text-align:center;margin:20px 0 32px}.profile h3{margin:0;color:var(--blue);font:500 25px Georgia,serif;letter-spacing:.04em}.profile p{margin:5px 0 0;color:var(--blue);font-size:20px}
+.bride-photo{aspect-ratio:4/5}
+blockquote{text-align:center;margin:32px 0 12px;font-size:14px;line-height:1.9;color:#656b6e}
+.corner-flower,.botanical,.rsvp-flower,.palm{fill:none;stroke:#7d7a73;stroke-width:1.1}
+.corner-flower{position:absolute;left:18px;bottom:0;width:125px;opacity:.62}
+.wedding-section{padding:0}
+.wedding-panel{position:relative;padding:72px 20px 48px;text-align:center;border-top:1px solid #eeeae3}
+.wedding-panel .section-head h2{font-size:28px}
+.date-lg{margin:27px 0 16px;color:var(--blue);font-size:17px;line-height:1.8}
+.ring-icon{width:88px;margin:6px auto 8px;fill:none;stroke:var(--blue);stroke-width:2}
+.venue{margin:10px 0 7px;color:var(--blue);font-size:19px}
+.address{margin:0;color:#6f7578;font-size:12px;line-height:1.7}
+.primary{display:inline-flex;align-items:center;justify-content:center;gap:16px;border:0;background:var(--blue);color:white;text-decoration:none;padding:12px 23px;cursor:pointer}
+.map-link{margin-top:20px}.disabled{opacity:.9}
+.map-placeholder{height:285px;margin:24px -20px -48px;position:relative;overflow:hidden;background:#f3f0ea}
+.road{position:absolute;height:7px;background:#ded9d0;border-radius:8px}.r1{width:230px;left:-30px;top:56px;transform:rotate(8deg)}.r2{width:310px;left:50px;top:150px;transform:rotate(-10deg)}.r3{width:280px;left:20px;top:225px;transform:rotate(6deg)}.r4{width:8px;height:320px;left:135px;top:-20px;transform:rotate(3deg)}
+.river{position:absolute;width:36px;height:360px;right:48px;top:-30px;background:#cfe4ea;border-radius:48%;transform:rotate(7deg)}
+.ml{position:absolute;font-size:10px;color:#4f5558}.m1{left:12px;top:80px}.m2{right:98px;top:20px}.m3{left:12px;bottom:24px}.m4{right:8px;bottom:56px}.venue-pin{left:76px;top:146px;color:#3f4548;font-weight:700}.venue-pin::first-letter{color:var(--accent)}
+.jakarta-panel{min-height:760px;padding-bottom:90px}
+.boat-icon{width:250px;margin:18px auto 6px;fill:none;stroke:#7f8587;stroke-width:1.25}
+.jakarta-panel .venue{font-weight:500}
+.palm{position:absolute;right:-24px;bottom:15px;width:155px;stroke:var(--blue);opacity:.7}
+.tagline{position:absolute;left:27px;bottom:40px;color:var(--blue);text-align:left;font:10px/1.8 Georgia,serif;letter-spacing:.18em}
+.rsvp-section{padding-bottom:90px}
+form{margin-top:30px;text-align:left}fieldset{border:0;padding:0;margin:0 0 24px}legend{font-size:13px;font-weight:600;margin-bottom:10px}
+.attend-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px}.attend-toggle input{display:none}.attend-toggle span{display:block;padding:12px 8px;text-align:center;border:1px solid #bfc4c6;background:white;font-size:13px}.attend-toggle input:checked+span{background:var(--blue);border-color:var(--blue);color:white}
+.check-row{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:12px}.check-row input{display:none}.check-row span{width:19px;height:19px;border:1px solid #8d9699;background:white;display:inline-block}.check-row input:checked+span{background:var(--blue);box-shadow:inset 0 0 0 4px white}
+.field{display:block;font-size:13px;font-weight:600;margin:0 0 20px}.field select,.field textarea{display:block;width:100%;margin-top:9px;border:1px solid var(--line);background:#fff;padding:12px;color:var(--ink);outline:none;font-weight:400}.field select{max-width:92px}
+.submit{width:100%;margin-top:2px}.form-note{text-align:center;font-size:10px;color:#9a9d9f;line-height:1.6}
+.rsvp-flower{position:absolute;right:-5px;bottom:0;width:120px;opacity:.55}
+footer{padding:62px 20px 78px;text-align:center;background:#f2efe9;color:var(--blue)}footer p{font:500 18px Georgia,serif;letter-spacing:.08em;margin:0 0 7px}footer strong{font-weight:500}
+.opening{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:10px;overflow:hidden}.opening.hidden{display:none}.opening-backdrop{position:absolute;inset:0;background:linear-gradient(#48615d44,#26342f66),linear-gradient(135deg,#aab1a2,#707b72)}
+.opening-card{position:relative;width:min(100%,440px);max-height:92svh;overflow:auto;padding:28px 18px 24px;background:#fffefa;border-radius:16px;text-align:center;box-shadow:0 20px 60px #0003}
+.opening-card h1{margin:18px 0 22px;color:var(--blue);font:500 28px Georgia,"Noto Serif KR",serif}.opening-photo{aspect-ratio:1/1;width:95%;margin:auto;border-radius:8px}.opening-copy{margin:26px 0 0;font-size:14px;line-height:2}.couple{margin:24px 0 4px;color:var(--blue);font:500 19px Georgia,"Noto Serif KR",serif}.opening-card .primary{margin-top:20px;width:68%}
+.xbtn{border:0;background:none;color:#7f8587;cursor:pointer;font-size:30px;line-height:1}.opening-card>.xbtn{position:absolute;right:16px;top:13px}
+.menu-layer{position:fixed;inset:0;z-index:90;background:#fbfaf6;display:none;overflow:hidden}.menu-layer.open{display:block}.menu-x{position:absolute;right:22px;top:20px}.menu-center{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:2}.menu-brand{color:var(--blue);font:500 20px Georgia,"Noto Serif KR",serif}.tiny-en{margin-top:3px;font:10px Georgia,serif;letter-spacing:.18em;color:#777}.menu-center nav{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:40px}.menu-center nav a{text-align:center;text-decoration:none;color:var(--blue);font:20px Georgia,"Noto Serif KR",serif}.menu-center nav small{display:block;margin-top:4px;color:#8d9193;font:italic 12px Georgia,serif}.menu-center nav>span{width:22px;height:1px;background:#a9adb0}.script{margin-top:34px;color:#8f918f;font:italic 27px/1.05 Georgia,serif;transform:rotate(-8deg)}
+.botanical{position:absolute;width:145px;opacity:.45}.botanical-top{left:-15px;top:-20px}.botanical-bottom{right:-15px;bottom:-20px;transform:rotate(180deg)}
+@media(max-width:390px){.section-head h2{font-size:26px}.home-copy{font-size:13px}.wedding-panel{padding-left:18px;padding-right:18px}.map-placeholder{margin-left:-18px;margin-right:-18px}}
