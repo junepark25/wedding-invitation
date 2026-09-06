@@ -855,12 +855,43 @@ legend,.field{font-size:12.5px;font-weight:600}
   }
 }
 
-/* Jakarta Wedding Image */
+
+/* =========================================================
+   V7: Korea map + Jakarta marina image
+   ========================================================= */
+.korean-map-image{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:22px auto 0;
+  object-fit:contain;
+  background:#fff;
+}
+
 .jakarta-marina-image{
   display:block;
   width:100%;
-  max-width:320px;
+  max-width:340px;
   height:auto;
-  margin:24px auto 18px;
+  margin:22px auto 18px;
   object-fit:contain;
+}
+
+/* Jakarta illustration is a dark line-art PNG.
+   Keep it contained and centered inside the event section. */
+.jakarta .jakarta-marina-image{
+  padding:0;
+}
+
+@media (min-width:768px){
+  .korean-map-image{
+    max-width:100%;
+    margin-top:28px;
+  }
+
+  .jakarta-marina-image{
+    max-width:430px;
+    margin-top:28px;
+    margin-bottom:22px;
+  }
 }
